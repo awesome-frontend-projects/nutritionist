@@ -1,26 +1,115 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  /* green shades */
+  --color-green-70: #cbea7b;
+  --color-green-75: #d3ee91;
+  --color-green-80: #dcf1a7;
+  --color-green-85: #e5f5bd;
+  --color-green-90: #eef8d3;
+  --color-green-95: #f6fbe9;
+  --color-green-97: #fafdf2;
+  --color-green-99: #fdfefb;
+  /* dark Green shades */
+  --color-dark-green-15: #1a3129;
+  --color-dark-green-20: #234338;
+  --color-dark-green-25: #2c5446;
+  --color-dark-green-30: #346454;
+  --color-dark-green-40: #468671;
+  --color-dark-green-60: #79b9a4;
+  --color-dark-green-80: #bcdcd1;
+  --color-dark-green-90: #ddede8;
+  /* grey shades */
+  --color-grey-10: #191919;
+  --color-grey-15: #262626;
+  --color-grey-20: #333333;
+  --color-grey-30: #4c4c4d;
+  --color-grey-40: #656567;
+  --color-grey-60: #98989a;
+  --color-grey-90: #e6e6e6;
+  --color-grey-95: #f2f2f2;
+  --color-grey-97: #f7f7f7;
+  --color-grey-99: #fcfcfc;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-green-97 text-grey-20 tracking-normal;
+}
+
+@layer utilities {
+  .container {
+    @apply px-4 mx-auto sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1130px] 2xl:max-w-[1360px];
+  }
+  p {
+    @apply text-sm sm:text-base md:text-[18px] font-medium;
+  }
+  button {
+    @apply cursor-pointer;
+  }
+  h2 {
+    @apply text-[28px] lg:text-[38px] xl:text-[48] font-semibold text-balance leading-tight;
+  }
+  .card-title {
+    @apply font-semibold text-[18px] lg:text-xl;
+  }
+  .section {
+    @apply pt-[100px] xl:pt-[160px];
+  }
+  input,
+  textarea {
+    @apply outline-none;
+  }
+}
+
+@layer components {
+  .primary-btn {
+    @apply bg-green-70 hover:bg-green-80 transition-colors px-8 py-4 inline-block font-semibold rounded-md;
+  }
+  .secondary-btn {
+    @apply bg-green-95 border border-green-85 px-8 py-4 font-semibold rounded-md hover:bg-green-85 transition-colors;
+  }
+}
+
+/* Header */
+.navbar {
+  @apply absolute top-0 left-0 bg-dark-green-25 max-w-[320px] w-full h-screen p-6 -translate-x-[320px] transition-transform duration-300 z-40;
+}
+.navbar.active {
+  @apply translate-x-0;
+}
+
+.overlay {
+  @apply w-full h-screen fixed top-0 left-0 bg-grey-10/65 opacity-0 pointer-events-none transition-opacity duration-300 z-30;
+}
+.overlay.active {
+  @apply opacity-100 pointer-events-auto;
+}
+
+/* Hero */
+.hero-stat-wrapper div:nth-child(2) {
+  margin-left: -1rem;
+}
+.hero-stat-wrapper div:nth-child(3) {
+  margin-left: -1rem;
+}
+
+/* About page */
+
+.story-card-wrapper .card:nth-child(2n) .card-img {
+  order: 2;
+  border-left: 10px solid var(--color-green-70);
+  border-right: none;
+}
+.story-card-wrapper .card:nth-child(2n) .card-content {
+  text-align: right;
+}
+
+@media (max-width: 1024px) {
+  .story-card-wrapper .card:nth-child(2n) .card-img {
+    order: 0;
+    border-left: none;
+  }
+  .story-card-wrapper .card:nth-child(2n) .card-content {
+    text-align: left;
+  }
 }
