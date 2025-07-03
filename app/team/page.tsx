@@ -1,5 +1,4 @@
 import React from "react";
-import TeamTop from "./components/TeamTop";
 import TeamSec from "./components/TeamSec";
 import Cta from "@/components/Cta";
 import PageTitle from "@/components/PageTitle";
