@@ -46,10 +46,10 @@ const FaqSec = () => {
               // Card
               <div className="border-b border-b-green-85" key={item.id}>
                 {/* Title */}
-                <div className="flex items-center py-4 justify-between">
+                <div className="flex items-center py-4 justify-between gap-7">
                   <h3 className="card-title">{item.title}</h3>
                   <button
-                    className="w-10 h-10 bg-dark-green-20 rounded-sm text-white flex items-center justify-center active:bg-dark-green-30 hover:bg-dark-green-40 transition-colors"
+                    className="w-10 h-10 bg-dark-green-20 rounded-sm text-white flex items-center justify-center active:bg-dark-green-30 hover:bg-dark-green-40 transition-colors aspect-square"
                     onClick={() => handleClick(item.id)}
                   >
                     {openId === item.id ? <RiCloseLine /> : <RiAddLine />}
