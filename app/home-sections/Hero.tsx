@@ -77,7 +77,7 @@ const Hero = () => {
                     alt="image"
                     width={40}
                     height={40}
-                    className="rounded-full aspect-square w-full h-full object-cover"
+                    className="rounded-full aspect-square w-full h-full object-cover block"
                   />
                 </div>
               ))}

@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Title from "@/components/Title";
 import { pricingPageSecItems } from "@/data/data";
 import Link from "next/link";
 
