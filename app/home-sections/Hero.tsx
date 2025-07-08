@@ -69,9 +69,9 @@ const Hero = () => {
             variants={fadeInUp}
             className="flex flex-wrap justify-center lg:justify-start items-center gap-4"
           >
-            <div className="flex shrink-0 items-center border border-green-70 rounded-[58px] p-2 hero-stat-wrapper">
+            <div className="flex items-center border border-green-70 rounded-[58px] p-2 hero-stat-wrapper">
               {heroStatItems.map((item, index) => (
-                <div key={index}>
+                <div key={index} className="shrink-0">
                   <Image
                     src={item.imgUrl}
                     alt="image"
