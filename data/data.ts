@@ -309,7 +309,7 @@ export const teamItems = [
   {
     id: 1,
     img: "/images/team-1.png",
-    name: "Sarah Mitchell",
+    name: "Daniel Lee",
     role: "Founder and CEO",
   },
   {
@@ -344,14 +344,14 @@ export const teamItems = [
   },
   {
     id: 7,
-    img: "/images/team-6.png",
-    name: "Daniel Lee",
+    img: "/images/team-7.png",
+    name: "Sarah Mitchell",
     role: "Head of Product Design",
   },
   {
     id: 8,
-    img: "/images/team-6.png",
-    name: "Ethan Parker",
+    img: "/images/team-8.png",
+    name: "Anna Smith",
     role: "Senior Frontend Developer",
   },
 ];
