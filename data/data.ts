@@ -440,14 +440,17 @@ export const howItWorkItems = [
 export const socialIconItems = [
   {
     id: 1,
+    name: "Facebook",
     icon: RiFacebookFill,
   },
   {
     id: 2,
+    name: "Twitter",
     icon: RiTwitterFill,
   },
   {
     id: 3,
+    name: "Linkedin",
     icon: RiLinkedinFill,
   },
 ];

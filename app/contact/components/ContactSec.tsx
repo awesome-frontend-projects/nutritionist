@@ -172,8 +172,10 @@ const ContactSec = () => {
                   href="#"
                   key={item.id}
                   className="bg-green-70 w-[52px] h-[52px] rounded-md grid place-content-center hover:bg-green-75 transition-colors"
+                  aria-label={`${item.name} (opens in new tab)`}
+                  rel="noopener noreferrer"
                 >
-                  <item.icon />
+                  <item.icon aria-hidden="true" />
                 </a>
               ))}
             </div>
