@@ -64,7 +64,6 @@ const Header = () => {
         <nav
           className={`navbar ${isOpen ? "active" : ""}`}
           aria-label="Main navigation"
-          aria-hidden={!isOpen}
           aria-expanded={isOpen}
           id="main-nav"
         >
