@@ -63,7 +63,6 @@ const Header = () => {
         {/* Mobile Menu */}
         <nav
           className={`navbar ${isOpen ? "active" : ""}`}
-          role="navbar"
           aria-label="Main navigation"
           aria-hidden={!isOpen}
           aria-expanded={isOpen}
