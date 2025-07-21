@@ -99,9 +99,9 @@ const PricingSec = () => {
                 aria-labelledby={`pricing-plan-${item.id}-title`}
               >
                 <div>
-                  <h4 className="text-[22px] font-semibold md:text-[24px]">
+                  <h3 className="text-[22px] font-semibold md:text-[24px]">
                     {item.title}
-                  </h4>
+                  </h3>
                   <p>{item.subtitle}</p>
                 </div>
                 <p className="my-10">{item.text}</p>
