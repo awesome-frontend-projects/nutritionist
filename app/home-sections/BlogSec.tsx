@@ -50,7 +50,7 @@ const BlogSec = () => {
               {/* card content */}
               <div className="mt-5">
                 <p>{item.subtitle}</p>
-                <h4 className="card-title">{item.title}</h4>
+                <h3 className="card-title">{item.title}</h3>
                 <p className="my-5">{item.text}</p>
               </div>
 
