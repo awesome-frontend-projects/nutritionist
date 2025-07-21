@@ -11,7 +11,7 @@ import { fadeInUp, staggerContainer } from "@/lib/motion";
 
 const BlogSec = () => {
   return (
-    <section className="section">
+    <section className="section" aria-labelledby="blog-section-title">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -33,6 +33,8 @@ const BlogSec = () => {
               variants={fadeInUp}
               className="p-[30px] rounded-[10px] bg-green-95 border border-green-90"
               key={item.id}
+              role="article"
+              aria-labelledby={`blog-title-${item.id}`}
             >
               {/* Card img */}
               <div className="">
@@ -70,10 +72,16 @@ const BlogSec = () => {
                   </div>
                 </div>
                 <div className="flex max-sm:justify-end gap-2">
-                  <button className="w-12 h-12 flex items-center justify-center bg-green-95 border border-green-90 hover:bg-green-85">
+                  <button
+                    className="w-12 h-12 flex items-center justify-center bg-green-95 border border-green-90 hover:bg-green-85"
+                    aria-label="Like this post"
+                  >
                     <RiHeartLine size={30} />
                   </button>
-                  <button className="w-12 h-12 flex items-center justify-center bg-green-95 border border-green-90 hover:bg-green-90">
+                  <button
+                    className="w-12 h-12 flex items-center justify-center bg-green-95 border border-green-90 hover:bg-green-90"
+                    aria-label="Bookmark this post"
+                  >
                     <RiBookmarkLine size={30} />
                   </button>
                 </div>
