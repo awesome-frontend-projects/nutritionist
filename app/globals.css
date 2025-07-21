@@ -66,7 +66,7 @@ body {
     @apply bg-green-70 hover:bg-green-80 transition-colors px-8 py-4 inline-block font-semibold rounded-md;
   }
   .secondary-btn {
-    @apply bg-green-95 border border-green-85 px-8 py-4 font-semibold rounded-md hover:bg-green-85 transition-colors;
+    @apply bg-green-95 border border-green-85 px-8 py-4 font-semibold rounded-md hover:bg-green-85 transition-colors inline-block;
   }
 }
 

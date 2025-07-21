@@ -56,12 +56,12 @@ const Hero = () => {
             variants={fadeInUp}
             className="flex gap-3 flex-wrap mb-12 justify-center lg:justify-start"
           >
-            <button className="primary-btn max-sm:w-full">
-              <Link href={"#"}>Get Starter Today</Link>
-            </button>
-            <button className="secondary-btn max-sm:w-full">
-              <Link href={"#"}>Book a Demo</Link>
-            </button>
+            <Link href={"#"} className="primary-btn max-sm:w-full">
+              Get Starter Today
+            </Link>
+            <Link href={"#"} className="secondary-btn max-sm:w-full">
+              Book a Demo
+            </Link>
           </motion.div>
 
           {/* hero status */}
