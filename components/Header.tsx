@@ -45,7 +45,7 @@ const Header = () => {
         </Link>
 
         {/* Mobile Menu */}
-        <nav className={`navbar ${isOpen ? "active" : ""}`}>
+        <nav className={`navbar ${isOpen ? "active" : ""}`} role="navbar">
           {/* wrapper */}
           <div className="flex items-center justify-between">
             <div>
@@ -56,8 +56,12 @@ const Header = () => {
                 height={34}
               />
             </div>
-            <button className="text-green-70" onClick={handleClick}>
-              <RiCloseLine size={30} />
+            <button
+              className="text-green-70"
+              onClick={handleClick}
+              aria-label="close menu"
+            >
+              <RiCloseLine aria-hidden="true" focusable="false" />
             </button>
           </div>
 
@@ -71,6 +75,7 @@ const Header = () => {
                     pathname === item.href ? "text-green-70" : ""
                   }`}
                   onClick={handleClick}
+                  aria-label="link"
                 >
                   {item.label}
                 </Link>
@@ -83,6 +88,7 @@ const Header = () => {
             href="/contact"
             className="primary-btn block text-center"
             onClick={handleClick}
+            aria-label="contact us"
           >
             Contact us
           </Link>
@@ -114,13 +120,15 @@ const Header = () => {
         <button
           className="lg:hidden text-green-70 active:text-green-75"
           onClick={handleClick}
+          aria-label="open menus"
         >
-          <RiMenu3Line size={30} />
+          <RiMenu3Line size={30} aria-hidden="true" focusable="false" />
         </button>
 
         <div
           className={`overlay ${isOpen ? "active" : ""}`}
           onClick={handleClick}
+          aria-label="overlay"
         ></div>
       </div>
     </header>
