@@ -83,8 +83,8 @@ const Hero = () => {
               ))}
             </div>
             <p className="text-dark-green-20">
-              <span className="text-dark-green-40 font-bold">430+</span> Happy
-              Customers
+              <span className="text-dark-green-15/90 font-bold">430+</span>{" "}
+              Happy Customers
             </p>
           </motion.div>
         </motion.div>
