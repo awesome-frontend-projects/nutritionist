@@ -24,7 +24,7 @@ const Card = ({ icon, title, text }: cardProps) => {
         <figure className="bg-green-70 w-14 h-14 rounded-md flex items-center justify-center shrink-0">
           <Image src={icon} alt="icon" width={30} height={30} />
         </figure>
-        <h3 className="card-title">{title}</h3>
+        <h4 className="card-title">{title}</h4>
       </div>
       {/* card text */}
       <p className="mt-5">{text}</p>
