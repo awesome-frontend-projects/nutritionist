@@ -54,7 +54,7 @@ const Hero = () => {
           {/* hero btns */}
           <motion.div
             variants={fadeInUp}
-            className="flex gap-2.5 flex-wrap mb-12 justify-center lg:justify-start"
+            className="flex gap-3 flex-wrap mb-12 justify-center lg:justify-start"
           >
             <button className="primary-btn max-sm:w-full">
               <Link href={"#"}>Get Starter Today</Link>
@@ -69,7 +69,7 @@ const Hero = () => {
             variants={fadeInUp}
             className="flex flex-wrap justify-center lg:justify-start items-center gap-4"
           >
-            <div className="flex items-center border border-green-70 rounded-[58px] p-2 hero-stat-wrapper">
+            <div className="flex items-center border border-green-70 rounded-[58px] p-2 -space-x-5">
               {heroStatItems.map((item, index) => (
                 <div key={index} className="shrink-0">
                   <Image
