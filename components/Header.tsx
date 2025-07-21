@@ -99,7 +99,6 @@ const Header = () => {
                     pathname === item.href ? "text-green-70" : ""
                   }`}
                   onClick={handleClick}
-                  aria-label="link"
                   aria-current={pathname === item.href ? "page" : undefined}
                 >
                   {item.label}
