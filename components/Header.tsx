@@ -16,25 +16,41 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
   const pathname = usePathname();
+  // Handle keyboard events for menu toggle
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      handleClick();
+    }
+  };
+
   return (
     <header className="bg-dark-green-15 pt-3.5 pb-4">
       {/* Top bar */}
-      <div className="container bg-dark-green-20 border border-dark-green-25 text-white rounded-md text-center w-full py-2.5 px-3 sm:px-4 flex flex-wrap items-center justify-center gap-3.5 mb-3.5">
+      <div
+        className="container bg-dark-green-20 border border-dark-green-25 text-white rounded-md text-center w-full py-2.5 px-3 sm:px-4 flex flex-wrap items-center justify-center gap-3.5 mb-3.5"
+        role="region"
+        aria-label="Announcement"
+      >
         <p className="flex items-center gap-2.5 flex-wrap justify-center">
-          <span>
+          <span aria-hidden="true">
             <img src="/images/cricket-ball-icon.svg" alt="icon" />
           </span>
           Join Our Personalized Nutrition Demo For Free
         </p>
-        <Link href="#" className="hover:text-green-70 transition-colors">
-          <RiArrowRightLongLine />
+        <Link
+          href="#"
+          className="hover:text-green-70 transition-colors"
+          aria-label="Learn more about the nutrition demo"
+        >
+          <RiArrowRightLongLine aria-hidden="true" />
         </Link>
       </div>
       {/* Divider */}
-      <div className="w-full h-[0.7px] bg-dark-green-20"></div>
+      <div className="w-full h-[0.7px] bg-dark-green-20" aria-hidden="true" />
       {/* nav bar */}
       <div className="container flex items-center justify-between pt-4">
-        <Link href="/">
+        <Link href="/" aria-label="Home page">
           <Image
             src="/images/Logo.png"
             alt="logo"
@@ -45,10 +61,17 @@ const Header = () => {
         </Link>
 
         {/* Mobile Menu */}
-        <nav className={`navbar ${isOpen ? "active" : ""}`} role="navbar">
+        <nav
+          className={`navbar ${isOpen ? "active" : ""}`}
+          role="navbar"
+          aria-label="Main navigation"
+          aria-hidden={!isOpen}
+          aria-expanded={isOpen}
+          id="main-nav"
+        >
           {/* wrapper */}
           <div className="flex items-center justify-between">
-            <div>
+            <div aria-hidden="true">
               <Image
                 src="/images/Logo.png"
                 alt="logo"
@@ -59,7 +82,9 @@ const Header = () => {
             <button
               className="text-green-70"
               onClick={handleClick}
-              aria-label="close menu"
+              onKeyDown={handleKeyDown}
+              aria-label="Close menu"
+              aria-controls="main-nav"
             >
               <RiCloseLine aria-hidden="true" focusable="false" />
             </button>
@@ -76,6 +101,7 @@ const Header = () => {
                   }`}
                   onClick={handleClick}
                   aria-label="link"
+                  aria-current={pathname === item.href ? "page" : undefined}
                 >
                   {item.label}
                 </Link>
@@ -104,6 +130,7 @@ const Header = () => {
                   className={`hover:text-green-70 transition-colors font-semibold ${
                     pathname === item.href ? "text-green-70" : ""
                   }`}
+                  aria-current={pathname === item.href ? "page" : undefined}
                 >
                   {item.label}
                 </Link>
@@ -121,6 +148,9 @@ const Header = () => {
           className="lg:hidden text-green-70 active:text-green-75"
           onClick={handleClick}
           aria-label="open menus"
+          onKeyDown={handleKeyDown}
+          aria-controls="main-nav"
+          aria-expanded={isOpen}
         >
           <RiMenu3Line size={30} aria-hidden="true" focusable="false" />
         </button>
@@ -128,7 +158,10 @@ const Header = () => {
         <div
           className={`overlay ${isOpen ? "active" : ""}`}
           onClick={handleClick}
-          aria-label="overlay"
+          role="button"
+          aria-label="Close menu"
+          tabIndex={isOpen ? 0 : -1}
+          onKeyDown={handleKeyDown}
         ></div>
       </div>
     </header>
