@@ -10,7 +10,7 @@ import { staggerContainer, fadeInUp } from "@/lib/motion";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark-green-15 py-10 text-white">
+    <footer className="bg-dark-green-15 py-10 text-white" role="contentinfo">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -34,8 +34,10 @@ const Footer = () => {
             <button
               className="w-12 h-12 bg-dark-green-20 hover:bg-dark-green-30 transition-colors rounded-full flex items-center justify-center aspect-square"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              aria-labelledby="back-to-top-label"
+              aria-label="Scroll to top of page"
             >
-              <RiArrowUpLongLine size={24} />
+              <RiArrowUpLongLine size={24} aria-hidden="true" />
             </button>
           </div>
         </motion.div>
@@ -50,11 +52,13 @@ const Footer = () => {
                 key={item.id}
                 className="flex items-center gap-2.5 border border-dark-green-25 rounded-sm p-3"
               >
-                {<item.icon />}
+                {<item.icon aria-hidden="true" />}
                 <a
                   href="#"
                   target="_blank"
                   className="hover:text-green-70 transition-colors"
+                  rel="noopener noreferrer"
+                  aria-label={item.label}
                 >
                   {item.label}
                 </a>
