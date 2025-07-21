@@ -50,7 +50,7 @@ body {
     @apply text-[28px] lg:text-[38px] xl:text-[48] font-semibold text-balance leading-tight;
   }
   .card-title {
-    @apply font-semibold text-[18px] lg:text-xl;
+    @apply font-semibold text-xl;
   }
   .section {
     @apply pt-[100px] xl:pt-[160px];
@@ -84,17 +84,7 @@ body {
 .overlay.active {
   @apply opacity-100 pointer-events-auto;
 }
-
-/* Hero */
-/* .hero-stat-wrapper div:nth-child(2) {
-  margin-left: -1rem;
-}
-.hero-stat-wrapper div:nth-child(3) {
-  margin-left: -1rem;
-} */
-
 /* About page */
-
 .story-card-wrapper .card:nth-child(2n) .card-img {
   order: 2;
   border-left: 10px solid var(--color-green-70);

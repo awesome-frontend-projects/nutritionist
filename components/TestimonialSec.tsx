@@ -95,9 +95,9 @@ const TestimonialSec = () => {
                         className="rounded-md"
                       />
                     </div>
-                    <h4 className="card-title">
+                    <h3 className="card-title">
                       <cite>{item.name}</cite>
-                    </h4>
+                    </h3>
                   </div>
                 </div>
               </SwiperSlide>

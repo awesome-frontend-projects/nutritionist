@@ -79,9 +79,9 @@ const PricingPageSec = () => {
                 className="p-10 flex flex-col bg-green-95 border border-green-90 rounded-[10px]"
               >
                 <div>
-                  <h4 className="text-[22px] font-semibold md:text-[24px]">
+                  <h3 className="text-[22px] font-semibold md:text-[24px]">
                     {item.title}
-                  </h4>
+                  </h3>
                   <p>{item.subtitle}</p>
                 </div>
                 {/* Pricing content */}

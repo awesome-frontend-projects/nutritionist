@@ -6,7 +6,7 @@ import React from "react";
 
 //import motion
 import { motion } from "motion/react";
-import { fadeInUp, staggerContainer } from "@/lib/motion";
+import { staggerContainer } from "@/lib/motion";
 import Card from "@/components/Card";
 
 const Features = () => {
