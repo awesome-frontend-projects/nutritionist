@@ -32,7 +32,7 @@ const TeamSec = () => {
             </figure>
             {/* info */}
             <div className="absolute -bottom-5 left-0 bg-white p-5 rounded-tr-3xl">
-              <h4 className="card-title">{item.name}</h4>
+              <h3 className="card-title">{item.name}</h3>
               <p>{item.role}</p>
             </div>
           </motion.div>

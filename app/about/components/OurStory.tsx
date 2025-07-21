@@ -48,7 +48,7 @@ const OurStory = () => {
 
               {/* Card content */}
               <div className="p-[30px] lg:p-[60px] card-content">
-                <h4 className="text-2xl font-bold">{item.title}</h4>
+                <h3 className="text-2xl font-bold">{item.title}</h3>
                 <p className="py-5">{item.text}</p>
                 <p>{item.date}</p>
               </div>
