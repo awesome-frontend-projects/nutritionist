@@ -45,11 +45,15 @@ const BlogPageCards = () => {
               </figure>
               {/* Card content */}
               <div className="my-10">
-                <h4 className="card-title mb-2">{item.title}</h4>
-                <p>{item.text}</p>
+                <h4 className="card-title mb-2 text-neutral-800">
+                  {item.title}
+                </h4>
+                <p className="text-neutral-700">{item.text}</p>
               </div>
               {/* Button */}
-              <button className="primary-btn">Read More</button>
+              <button className="primary-btn bg-[#749326] text-white hover:bg-[#809057] transition-colors">
+                Read More
+              </button>
             </motion.div>
           ))}
         </motion.div>

@@ -138,7 +138,7 @@ const PricingPageSec = () => {
                 </div>
                 {/* Button */}
                 <button className="primary-btn w-full mt-auto">
-                  <Link href="">
+                  <Link href="#">
                     aria-label={`Choose ${item.title} plan`}
                     Choose Plan
                   </Link>
