@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
+import "lenis/dist/lenis.css";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NextTopLoader from "nextjs-toploader";
@@ -14,9 +16,6 @@ export const metadata: Metadata = {
   title: "Nutritionist | Healthy Diet Planning Website.",
   description:
     "Get personalized meal plans, expert nutrition advice, and healthy eating tips tailored to your lifestyle. Start your journey to better health with our professional nutritionist services.",
-  // icons: {
-  //   icon: "/favicon.svg",
-  // },
 };
 
 export default function RootLayout({
