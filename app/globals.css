@@ -72,7 +72,7 @@ body {
 
 /* Header */
 .navbar {
-  @apply absolute top-0 left-0 bg-dark-green-25 max-w-[320px] w-full h-screen p-6 -translate-x-[320px] transition-transform duration-300 z-40;
+  @apply absolute top-0 left-0 bg-dark-green-25 max-w-[320px] w-full h-svh p-6 -translate-x-[320px] transition-transform duration-300 z-40;
 }
 .navbar.active {
   @apply translate-x-0;

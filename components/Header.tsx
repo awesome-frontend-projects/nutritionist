@@ -9,6 +9,7 @@ import {
   RiMenu3Line,
 } from "@remixicon/react";
 import { navItems } from "@/data/data";
+import { RemoveScroll } from "react-remove-scroll";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,61 +62,63 @@ const Header = () => {
         </Link>
 
         {/* Mobile Menu */}
-        <nav
-          className={`navbar ${isOpen ? "active" : ""}`}
-          aria-label="Main navigation"
-          aria-expanded={isOpen}
-          id="main-nav"
-        >
-          {/* wrapper */}
-          <div className="flex items-center justify-between">
-            <div aria-hidden="true">
-              <Image
-                src="/images/Logo.png"
-                alt="logo"
-                width={147}
-                height={34}
-              />
-            </div>
-            <button
-              className="text-green-70"
-              onClick={handleClick}
-              onKeyDown={handleKeyDown}
-              aria-label="Close menu"
-              aria-controls="main-nav"
-            >
-              <RiCloseLine aria-hidden="true" focusable="false" />
-            </button>
-          </div>
-
-          {/* Nav list */}
-          <ul className="mt-14 grid font-medium text-grey-97 text-center mb-10">
-            {navItems.map((item) => (
-              <li key={item.id}>
-                <Link
-                  href={item.href}
-                  className={`block text-xl py-3 border-t border-dark-green-20 hover:text-green-70 transition-colors ${
-                    pathname === item.href ? "text-green-70" : ""
-                  }`}
-                  onClick={handleClick}
-                  aria-current={pathname === item.href ? "page" : undefined}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* Contact btn */}
-          <Link
-            href="/contact"
-            className="primary-btn block text-center"
-            onClick={handleClick}
-            aria-label="contact us"
+        <RemoveScroll enabled={isOpen}>
+          <nav
+            className={`navbar ${isOpen ? "active" : ""}`}
+            aria-label="Main navigation"
+            aria-expanded={isOpen}
+            id="main-nav"
           >
-            Contact us
-          </Link>
-        </nav>
+            {/* wrapper */}
+            <div className="flex items-center justify-between">
+              <div aria-hidden="true">
+                <Image
+                  src="/images/Logo.png"
+                  alt="logo"
+                  width={147}
+                  height={34}
+                />
+              </div>
+              <button
+                className="text-green-70"
+                onClick={handleClick}
+                onKeyDown={handleKeyDown}
+                aria-label="Close menu"
+                aria-controls="main-nav"
+              >
+                <RiCloseLine aria-hidden="true" focusable="false" />
+              </button>
+            </div>
+
+            {/* Nav list */}
+            <ul className="mt-14 grid font-medium text-grey-97 text-center mb-10">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <Link
+                    href={item.href}
+                    className={`block text-xl py-3 border-t border-dark-green-20 hover:text-green-70 transition-colors ${
+                      pathname === item.href ? "text-green-70" : ""
+                    }`}
+                    onClick={handleClick}
+                    aria-current={pathname === item.href ? "page" : undefined}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            {/* Contact btn */}
+            <Link
+              href="/contact"
+              className="primary-btn block text-center"
+              onClick={handleClick}
+              aria-label="contact us"
+            >
+              Contact us
+            </Link>
+          </nav>
+        </RemoveScroll>
 
         {/* lg menu */}
         <div className="max-lg:hidden flex items-center gap-8">
